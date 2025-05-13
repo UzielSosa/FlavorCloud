@@ -1,0 +1,44 @@
+/* css/components/card.css */
+
+.recipe-card {
+    background-color: var(--card-background, #f8f8f8);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 0; /* Quitamos el margin-bottom, el grid gap se encarga */
+
+    /* IMPORTANTE: Mantenemos esto para ayudar a prevenir roturas */
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+
+    /* --- NUEVO: Indicamos que la tarjeta es un item del grid y puede necesitar calcular su altura --- */
+    /* (El cálculo real de 'grid-row-end' lo hará JavaScript) */
+    grid-column: auto; /* Ocupa una columna por defecto */
+    /* No definimos grid-row-end aquí, lo hará JS */
+}
+
+.recipe-card:hover { /* SIN CAMBIOS */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-card img { /* SIN CAMBIOS */
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.recipe-card h3 { /* SIN CAMBIOS */
+    font-size: 1.1em;
+    margin: 15px 15px 5px 15px;
+    color: var(--text-color);
+}
+
+.recipe-card p { /* SIN CAMBIOS */
+    font-size: 0.9em;
+    color: #666;
+    margin: 0 15px 15px 15px;
+    line-height: 1.4;
+}

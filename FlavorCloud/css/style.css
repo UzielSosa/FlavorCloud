@@ -1,0 +1,71 @@
+/* css/style.css */
+
+/* Fuentes y Colores Base (Variables CSS) - SIN CAMBIOS */
+:root {
+    --primary-color: #ff6f61;
+    --secondary-color: #fde2e4;
+    --text-color: #333;
+    --background-color: #fff;
+    --card-background: #f8f8f8;
+    --font-main: 'Arial', sans-serif;
+    /* Añadimos una variable para el tamaño de fila base y el gap */
+    --grid-row-height: 10px;
+    --grid-gap: 20px;
+}
+
+/* Reset básico (si no usas normalize.css) - SIN CAMBIOS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body { /* SIN CAMBIOS */
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+main { /* SIN CAMBIOS */
+    padding: 20px;
+}
+
+.recipe-grid-container { /* SIN CAMBIOS */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 { /* SIN CAMBIOS */
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+/* --- CAMBIOS IMPORTANTES AQUÍ --- */
+/* Estilos para el grid (Preparado para Masonry con JS) */
+.recipe-grid {
+    display: grid;
+    gap: var(--grid-gap); /* Usamos la variable para el espacio */
+
+    /* Define las columnas responsivas como antes */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    /* Define filas automáticas MUY PEQUEÑAS. Cada tarjeta ocupará MÚLTIPLES de estas filas. */
+    grid-auto-rows: var(--grid-row-height);
+
+    /* Alineación inicial (puede no ser necesario con el JS) */
+    align-items: start; /* Alinea las tarjetas al inicio de su área asignada */
+}
+/* --- FIN DE CAMBIOS IMPORTANTES --- */
+
+
+footer { /* SIN CAMBIOS */
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Otros estilos generales... */

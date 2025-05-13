@@ -1,0 +1,63 @@
+/* Estilos para la Barra de Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio: logo izq, search centro, actions der */
+    align-items: center; /* Centra verticalmente los items */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: var(--secondary-color, #fde2e4); /* Color de fondo con fallback */
+    border-bottom: 1px solid #ddd; /* Línea sutil abajo */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    margin-right: 10px; /* Espacio entre logo y texto */
+    height: 40px; /* Altura fija para el logo */
+    width: auto;
+}
+
+.navbar-brand span {
+    font-size: 1.5em; /* Tamaño del texto "FlavorCloud" */
+    font-weight: bold;
+    color: var(--primary-color, #ff6f61); /* Color primario con fallback */
+}
+
+.navbar-search input[type="search"] {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Bordes redondeados */
+    min-width: 250px; /* Ancho mínimo */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.navbar-search input[type="search"]:focus {
+    outline: none;
+    border-color: var(--primary-color, #ff6f61);
+    box-shadow: 0 0 5px rgba(255, 111, 97, 0.5); /* Sombra al enfocar */
+}
+
+.navbar-actions {
+    /* Aquí irían estilos para botones de Login, Subir Receta, Perfil, etc. */
+    /* Ejemplo: */
+    /* display: flex; */
+    /* gap: 15px; */
+}
+
+/* Puedes añadir media queries para hacerla responsive si es necesario */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Apila los elementos en pantallas pequeñas */
+        align-items: stretch; /* Estira los elementos */
+        gap: 10px; /* Espacio entre elementos apilados */
+    }
+
+    .navbar-search {
+        width: 100%; /* Ocupa todo el ancho */
+    }
+     .navbar-search input[type="search"] {
+        width: 100%;
+     }
+}
